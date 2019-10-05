@@ -1,3 +1,5 @@
+https://docs.mapbox.com/help/tutorials/show-changes-over-time/
+
 mapboxgl.accessToken = 'pk.eyJ1IjoibXdlaW5iZXJnIiwiYSI6ImNqZ2I5azJtNTJlemYyd215ZTV3bXBmcWoifQ.Rd-1dcf3z9asEQqbu1MxOw';
 
 
@@ -71,7 +73,4 @@ map.on('load', function() {
     });
 
 });
-
-
-
 
