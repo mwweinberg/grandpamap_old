@@ -42,6 +42,7 @@ map.on('load', function() {
   filter: ['==', ['number', ['get', 'Year']], 1943]
     });
 
+    //controls the slider
     document.getElementById('slider').addEventListener('input', function(e) {
         var year = parseInt(e.target.value);
         console.log(year)
@@ -52,6 +53,22 @@ map.on('load', function() {
           //document.getElementById('active-hour').innerText = year;
     });
 
+    //controls the radio buttons
+
+    document.getElementById('filters').addEventListener('change', function(e) {
+      var month = e.target.value;
+      // update the map filter
+      if (month === 'all') {
+        filterDay = ['match', ['get', 'Month'], [1,2,3,4,5, 6,7,8,9,10,11,12], true, false];;
+    } else if (month === 'summer') {
+        filterDay = ['match', ['get', 'Month'], [1,2,3,10,11,12], false, true];
+    } else if (month === 'winter') {
+        filterDay = ['match', ['get', 'Month'], [1,2,3,10,11,12], true, false];
+      } else {
+        console.log('error');
+      }
+      map.setFilter('year', ['all', filterDay]);
+    });
 
 });
 
