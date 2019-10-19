@@ -52,7 +52,7 @@ map.on('load', function() {
         map.setFilter('year', ['==', ['number', ['get', 'Year']], year]);
 
           // update text in the UI
-          //document.getElementById('active-hour').innerText = year;
+          document.getElementById('active-year').innerText = year;
     });
 
     //controls the radio buttons
