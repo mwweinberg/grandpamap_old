@@ -84,6 +84,7 @@ map.on('load', function() {
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
 
+        //controls the popups when you click on a thing
         new mapboxgl.Popup()
             .setLngLat(coordinates)
             //.setHTML(description)
