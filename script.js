@@ -72,5 +72,24 @@ map.on('load', function() {
       map.setFilter('year', ['all', filterDay]);
     });
 
+    map.on('click', 'year', function (e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.description;
+        var feature = e.features[0];
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            //.setHTML(description)
+            .setHTML('<img class="preview" width = "100" src =".' + feature.properties.Preview + '">' +      '<h3>' + feature.properties.Year + '</h3><p>' + feature.properties.Location + '</p>' + '<p>' + '<a href=".' + feature.properties.Document + '" target="_blank">Click here</a> for a pdf.' + '</p>')
+            .addTo(map);
+        });
 });
+
 
