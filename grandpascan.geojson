@@ -9,7 +9,8 @@
       "Location": "W&B Flying School, Chickasha, OK",
       "Preview": "/data/1.png",
       "Document": "/data/1.pdf",
-      "Pages": 3
+      "Pages": 3,
+      "Author": "FL"
     },
     "geometry": {
       "type": "Point",
@@ -24,7 +25,8 @@
         "Location": "North Africa",
         "Preview": "/data/2.png",
         "Document": "/data/2.pdf",
-        "Pages": 2
+        "Pages": 2,
+        "Author": "FL"
     },
     "geometry": {
       "type": "Point",
@@ -39,7 +41,8 @@
         "Location": "North Africa",
         "Preview": "/data/3.png",
         "Document": "/data/3.pdf",
-        "Pages": 2
+        "Pages": 2,
+        "Author": "FL"
     },
     "geometry": {
       "type": "Point",
