@@ -10,7 +10,8 @@
       "Preview": "/data/1.png",
       "Document": "/data/1.pdf",
       "Pages": 3,
-      "Author": "FL"
+      "Author": "FL",
+      "Photo": 0
     },
     "geometry": {
       "type": "Point",
@@ -26,7 +27,8 @@
         "Preview": "/data/2.png",
         "Document": "/data/2.pdf",
         "Pages": 2,
-        "Author": "FL"
+        "Author": "FL",
+        "Photo": 0
     },
     "geometry": {
       "type": "Point",
@@ -42,7 +44,8 @@
         "Preview": "/data/3.png",
         "Document": "/data/3.pdf",
         "Pages": 2,
-        "Author": "FL"
+        "Author": "FL",
+        "Photo": 0
     },
     "geometry": {
       "type": "Point",
