@@ -88,7 +88,7 @@ map.on('load', function() {
         new mapboxgl.Popup()
             .setLngLat(coordinates)
             //.setHTML(description)
-            .setHTML('<img class="preview" width = "100" src =".' + feature.properties.Preview + '">' +      '<h3>' + feature.properties.Year + '</h3><p>' + feature.properties.Location + '</p>' + '<p>' + '<a href=".' + feature.properties.Document + '" target="_blank">Click here</a> for a pdf.' + '</p>')
+            .setHTML('<img class="preview" width = "100" src =".' + feature.properties.PreviewLocation + '">' +      '<h3>' + feature.properties.Year + '</h3><p>' + feature.properties.LocationName + '</p>' + '<p>' + '<a href=".' + feature.properties.DocumentLocation + '" target="_blank">Click here</a> for a pdf.' + '</p>')
             .addTo(map);
         });
 });
