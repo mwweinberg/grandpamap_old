@@ -1,19 +1,22 @@
 #Python3
 
 #Run this in the directory above the one that holds the test_pdfs
-#and make sure to change 'test_pdfs' to the name of the pdf directory
+#and make sure to change the input and output folders
 
-#also make sure to create a 'images' folder
+#also make sure to create the output folder
 
 import os
 from pdf2image import convert_from_path
+
+input_folder = './pdfs/'
+output_folder = 'preview/'
 
 
 #create a list
 pdfFile = []
 
 #add all of the pdf filenames to the list
-for filename in os.listdir('./test_pdfs'):
+for filename in os.listdir(input_folder):
     if filename.endswith('.pdf'):
         pdfFile.append(filename)
 #alphabetize the list
@@ -27,7 +30,7 @@ for filename in pdfFile:
     #this counter is to make sure that only the first page is turned into an image
     count = 1
     #this makes the filename usable below
-    full_filename = "./test_pdfs/" + filename
+    full_filename = input_folder + filename
     #this can be removed - it just helps see that things are running
     print(full_filename)
 
@@ -39,7 +42,7 @@ for filename in pdfFile:
     for image in images:
         if count < 2:
             #creates the filename without a pdf extension
-            output_filename = "images/" + filename.strip('.pdf') + '.jpg'
+            output_filename = output_folder + filename.strip('.pdf') + '.jpg'
             #writes the file
             image.save(output_filename, "JPEG")
             count = count + 1
