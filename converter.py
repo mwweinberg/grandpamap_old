@@ -19,7 +19,7 @@ for item in exampleData:
     documentlocation = "/data/docs/" + item[1] + ".pdf"
 
     #creates a dictionary for each line
-    out_dict = {"type": "Feature", "properties": {"OriginalFilename":item[0], "NewFileName":item[1], "Year":int(item[2]), "Month":int(item[3]), "Day":int(item[4]), "LocationName":item[5], "PreviewLocation": previewlocation, "DocumentLocation": documentlocation, "Pages": int(item[8]), "Author": item[9], "Recipient": item[10], "Photo": int(item[11]), "Lat": float(item[12]), "Lon": float(item[13]), "Notable": item[14]}, "geometry": {"type": "Point", "coordinates": [float(item[13]), float(item[12])]}}
+    out_dict = {"type": "Feature", "properties": {"OriginalFilename":item[0], "NewFileName":item[1], "TimeStamp": item[2], "Year":int(item[3]), "Month":int(item[4]), "Day":int(item[5]), "LocationName":item[6], "PreviewLocation": previewlocation, "DocumentLocation": documentlocation, "Pages": int(item[9]), "Author": item[10], "Recipient": item[11], "Photo": int(item[12]), "Lat": float(item[13]), "Lon": float(item[14]), "Notable": item[15]}, "geometry": {"type": "Point", "coordinates": [float(item[14]), float(item[13])]}}
 
     #which is then appended to the list
     out_list.append(out_dict)
