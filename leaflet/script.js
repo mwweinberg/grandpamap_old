@@ -16,7 +16,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 $.getJSON("grandpascan.geojson",function(data){
     //add the icon
     var planeIcon = L.icon({
-        iconUrl: '/files/icons/bomber.png',
+        iconUrl: '/data/icons/bomber.png',
         iconSize: [25, 25]
     });
    // add GeoJSON layer to the map once the file is loaded
@@ -26,7 +26,7 @@ $.getJSON("grandpascan.geojson",function(data){
            //variable to hold the marker
            var marker = L.marker(latlng, {icon:planeIcon});
            //content of the marker popup
-           marker.bindPopup(feature.properties.LocationName + '<br/>' + feature.properties.Year);
+           marker.bindPopup('<img class="preview" width = "100" src =".' + feature.properties.PreviewLocation + '">' +      '<h3>' + feature.properties.Year + '</h3><p>' + feature.properties.LocationName + '</p>' + '<p>' + '<a href=".' + feature.properties.DocumentLocation + '" target="_blank">Click here</a> for a pdf.' + '</p>');
            return marker;
        }
    }   );
