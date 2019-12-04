@@ -13,7 +13,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   }).addTo(map);
 
 //load the geojson using jquery
-$.getJSON("grandpascan.geojson",function(data){
+$.getJSON("/data/grandpascan.geojson",function(data){
     //add the icon
     var planeIcon = L.icon({
         iconUrl: '/data/icons/bomber.png',
