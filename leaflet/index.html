@@ -1,57 +1,35 @@
 <!DOCTYPE html?
 <html lang="en">
-    <head>
-        <meta charset='utf-8' />
-        <title>Frank Loops Around the World</title>
-        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-        <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css' rel='stylesheet' />
+<head>
+<title>A Leaflet map!</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
 
-        <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"/>
 
-    </head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+     crossorigin=""></script>
+
+     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
+#map{ height: 100% }
+</style>
+</head>
     <body>
-        <div id='map'></div>
-        <div id='console'>
-            <h1>Frank Loops Letters</h1>
-            <p>Data: <a href='grandpascan.geojson'>Frank Loops Letters</a> During WWII</p>
+        <h1>Where is this computer?</h1>
 
-            <div class='session'>
-              <h2>Pages</h2>
-              <div class='row colors'>
-              </div>
-              <div class='row labels'>
-                <div class='label'>0</div>
-                <div class='label'>1</div>
-                <div class='label'>2</div>
-                <div class='label'>3</div>
-                <div class='label'>4</div>
-                <div class='label'>5+</div>
-              </div>
-            </div>
+        <p>latitude: <span id='lat'></span>°<br/>
+            longitude: <span id='lon'></span>°</p>
 
-            <div class='session' id='sliderbar'>
-                <h2>Year: <label id='active-hour'>1943</label></h2>
-                <input id='slider' class='row' type='range' min='1940' max='1945' step='1' value='1943' />
-            </div>
-
-            <div class='session'>
-              <h2>Time of Year</h2>
-              <div class='row' id='filters'>
-                <input id='all' type='radio' name='toggle' value='all' checked='checked'>
-                <label for='all'>All</label>
-                <input id='summer' type='radio' name='toggle' value='summer'>
-                <label for='summer'>Summer</label>
-                <input id='winter' type='radio' name='toggle' value='winter'>
-                <label for='winter'>Winter</label>
-              </div>
-            </div>
+            <div id ="map"></div>
 
 
-
-
-            <script src='script.js'></script>
-        </div>
-
+        <script src='script.js'></script>
     <body>
 </html>
