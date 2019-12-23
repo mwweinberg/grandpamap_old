@@ -2,7 +2,7 @@
 
 // initialize the map
 //set center and zoom level
-var map = L.map('map').setView([0, 0], 3);
+var map = L.map('map').setView([30, -30], 3);
 
 // load a tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -26,12 +26,26 @@ $.getJSON("/data/grandpascan.geojson",function(data){
            //variable to hold the marker
            var marker = L.marker(latlng, {icon:planeIcon});
            //content of the marker popup
-           marker.bindPopup('<img class="preview" width = "100" src =".' + feature.properties.PreviewLocation + '">' +      '<h3>' + feature.properties.Year + '</h3><p>' + feature.properties.LocationName + '</p>' + '<p>' + '<a href=".' + feature.properties.DocumentLocation + '" target="_blank">Click here</a> for a pdf.' + '</p>');
+           marker.bindPopup('<img class="preview" width = "100" src =".' + feature.properties.PreviewLocation + '">' +      '<h3>' + feature.properties.Month + "/" + feature.properties.Year + '</h3><p>' + feature.properties.LocationName + '</p>' + '<p>' + '<a href=".' + feature.properties.DocumentLocation + '" target="_blank">Click here</a> for a pdf.' + '</p>');
            return marker;
+
+
        }
+
+
+
    }   );
+
+
    //cluster plugin stuff
    var clusters = L.markerClusterGroup({className: 'marker-cluster'});
    clusters.addLayer(letters);
    map.addLayer(clusters);
+
+
+
+
  });
+
+
+
